@@ -6,7 +6,10 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Traits\GeneralTrait;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+=======
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 use Validator;
 use function Nette\Utils\isEmail;
 use function PHPUnit\Framework\isEmpty;
@@ -14,7 +17,11 @@ use function PHPUnit\Framework\isEmpty;
 class ProductController extends Controller
 {
     use GeneralTrait;
+<<<<<<< HEAD
     /*
+=======
+    /**
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -31,7 +38,11 @@ class ProductController extends Controller
        }
     }
 
+<<<<<<< HEAD
     /*
+=======
+    /**
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -40,7 +51,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
+<<<<<<< HEAD
         $validator=FacadesValidator::make($request->all(),[
+=======
+        $validator=Validator::make($request->all(),[
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
             'product_name'=>'required|regex:/[a-zA-Z\s]+/',
                 'desc'=>'required|string',
                 'price'=>'required|numeric'
@@ -65,7 +80,11 @@ class ProductController extends Controller
         }
     }
 
+<<<<<<< HEAD
     /*
+=======
+    /**
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
      * Display the specified resource.
      *
      * @param  \App\Models\Poduct  $poduct
@@ -88,7 +107,11 @@ class ProductController extends Controller
         }
     }
 
+<<<<<<< HEAD
     /*
+=======
+    /**
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -131,12 +154,21 @@ class ProductController extends Controller
             return $this->successResponse($data,$msg);
         }
         catch (\Exception $ex){
+<<<<<<< HEAD
+=======
+
+        
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
             return $this->errorResponse($ex->getMessage(),500);
         }
     }
 
+<<<<<<< HEAD
 
 public function  filterProductsByCategory($letter)
+=======
+    public function  filterProductsByCategory($letter)
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
     {
         try {
             $data= Product::whereRelation('category','category_name','like',$letter.'%')->with('category')->get();

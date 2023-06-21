@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->foreignId('user_id')->nullable();
+=======
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
             $table->timestamps();
         });
     }

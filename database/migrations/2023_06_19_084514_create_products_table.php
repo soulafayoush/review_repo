@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('product_name');
           
@@ -22,6 +23,12 @@ return new class extends Migration
             $table->string('desc')->default('some description');
             $table->float('price')->default(0);
         
+=======
+            $table->foreignId('category_id')->constrained()->nullable();
+            $table->string('product_name');
+            $table->string('desc')->default('some description');
+            $table->float('price')->default(0);
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
             $table->timestamp('created_at')->nullable()->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
             $table->softDeletes();
