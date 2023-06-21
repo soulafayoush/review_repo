@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-            $table->foreignId('user_id')->nullable();
-=======
->>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
+            $table->foreignId('product_id')->nullable()->unique();
+            $table->foreignId('order_id')->nullable()->unique();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_product');
     }
 };

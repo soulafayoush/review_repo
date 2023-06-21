@@ -26,7 +26,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/logout',[AuthController::class,'logout']);;
 Route::post('/login',[AuthController::class,'login'])->name('login');
+<<<<<<< HEAD
+Route::get('/user',[UserController::class,'desc']);
+=======
 
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 
 Route::group([
 
@@ -58,15 +62,32 @@ Route::group([
 
 });
 
+<<<<<<< HEAD
+Route::group([
 
+    //'prefix' => 'products',
+    //  'middleware' => ['auth:sanctum','throttle:60,1']
+      'middleware' => ['auth:sanctum']
+  ],function (){
+=======
+
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 
 Route::get('/review',[ReviewController::class,'index']);
 Route::post('/add-review',[ReviewController::class,'store']);
 Route::match(['put', 'patch'], '/update-review/{id}',[ReviewController::class,'update']);
 Route::delete( '/delete-product/{id}',[ReviewController::class,'destroy']);
+<<<<<<< HEAD
+Route::get('/productt/{product_id}',[ReviewController::class,'filterreviewByproduct']);
+Route::get('/product/{$user_id}',[ReviewController::class,' filterreviewByuser']);
+
+
+});
+=======
 Route::get('/product/{product_id}',[ReviewController::class,'filterreviewByproduct']);
 Route::get('/product/{$user_id}',[ReviewController::class,' filterreviewByuser']);
 
 
 
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 

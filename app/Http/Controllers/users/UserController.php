@@ -7,6 +7,10 @@ use App\Http\Resources\UserCollection;
 use App\Models\User;
 use App\Http\Traits\GeneralTrait;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\DB;
+=======
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 class UserController extends Controller
 {
     use GeneralTrait;
@@ -79,8 +83,21 @@ class UserController extends Controller
             return $this->errorResponse($ex->getMessage(),500);
         }
     }
+<<<<<<< HEAD
+public function desc(){
+    $popularNames = User::select('name', DB::raw('COUNT(*) as count'))
+    ->groupBy('name')
+    ->orderByDesc('count')
+    ->get();
+    $msg='The user are here moro desc';
+    return $this->successResponse( $popularNames,$msg);
+
+}
+}
+=======
 
 
 
 }
+>>>>>>> 8223bfc6b8ccc6f055c5b9948f8ff613e6bec14a
 
